@@ -1,0 +1,1 @@
+Approach is to Transpose the given array and the reverse the each row.
