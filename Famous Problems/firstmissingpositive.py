@@ -58,6 +58,17 @@ First positive integer missing from the array is 3.
 '''
 
 
+'''
+
+TRICK TO SOLVE IN O(N) IS TO FOCUS ON INDEX BCOZ THE NUMBERS SUPPOSED TO BE HERE ARE 1-N
+
+TRAVERSE ECH ELEMENT AND IF ELEMENT IS VALID IE. IF ELEMTNT > 0 AND eLEMENT <= N then 
+swap the elemtnt with its actual index untill elemnt is equl to index or we get some invalid elemtnt
+ A[i] , A[correctPos] = A[correctPos] , A[i]
+
+'''
+
+
 class Solution:
     # @param A : list of integers
     # @return an integer
