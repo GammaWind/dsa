@@ -56,8 +56,9 @@ def shiftZeros(A):
             while firstZero < len(A):
                 firstZero += 1
                 if A[firstZero] == 0:
-                    
+                    currEle = firstZero
                     break
+
         currEle += 1
 
         
@@ -75,7 +76,7 @@ def shiftZeros(A):
 A = [0,1,12,0,3,0,7]
 B = [0,1,1,0,0,0,1]
 print(shiftZeros(A))
-print(shiftZeros(A))
+print(shiftZeros(B))
 
 
 
