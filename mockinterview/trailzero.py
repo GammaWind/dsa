@@ -36,27 +36,35 @@ Approach
 
 
 def shiftZeros(A):
+
     if len(A) == 1:
         return A
-    firstZero = 0
+    firstZero = -1
+    
     
     #finding first zero
     for i in range(len(A)):
         if A[i] == 0:
             firstZero = i
             break
+
+    if firstZero == -1:
+        return A    
     # we need to search for elements to swap after 0
     currEle = firstZero + 1    
     while currEle < len(A):
+        rouds += 1
         if A[currEle] != 0:
             A[currEle] , A[firstZero] = A[firstZero] , A[currEle]
 
             
             #finding next zero and setting it as firstZero
             while firstZero < len(A):
+                rouds += 1
                 firstZero += 1
                 if A[firstZero] == 0:
-                    currEle = firstZero
+                    
+                    
                     break
 
         currEle += 1
@@ -69,12 +77,13 @@ def shiftZeros(A):
         
             
 
-    
+    print(rouds)
     return A
 
 
-A = [0,1,12,0,3,0,7]
-B = [0,1,1,0,0,0,1]
+A = [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0]
+B = [0,0,0,0,0,0,0]
+
 print(shiftZeros(A))
 print(shiftZeros(B))
 
