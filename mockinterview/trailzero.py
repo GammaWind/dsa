@@ -39,7 +39,7 @@ def shiftZeros(A):
     firstZero = -1
     
     
-    #finding first zero
+    
 
 
     firstnonZero = 0
@@ -52,7 +52,7 @@ def shiftZeros(A):
     for j in range(firstnonZero,len(A)):
         A[j] = 0        
 
-    # we need to search for elements to swap after 0
+    
   
     return A
             
