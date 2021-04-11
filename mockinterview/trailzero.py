@@ -36,7 +36,7 @@ def shiftZeros(A):
 
     if len(A) == 1:
         return A
-    firstZero = -1
+    
     
     
     
