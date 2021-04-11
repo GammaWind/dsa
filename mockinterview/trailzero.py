@@ -23,13 +23,10 @@ Minimize the total number of operations.
 '''
 Approach 
 
-    we need to swap non zero elements with first zero in the array
+    take firstnonzero var start from 0
+    if we add all nonzero to array from start with firstnonzero index increasing
 
-    hence we need to find first zero 
-    
-    while traversing array whenever we find nonzero we swap nonzero with firstzero and find new firstzero
-
-    this way we will left with all 0 at the end maintaining order of non zero
+    then we can add left zeros in array from firstnonzero to last
 
 
 '''
@@ -43,42 +40,33 @@ def shiftZeros(A):
     
     
     #finding first zero
+
+
+    firstnonZero = 0
+
     for i in range(len(A)):
-        if A[i] == 0:
-            firstZero = i
-            break
+        if A[i] != 0:
+            A[firstnonZero] = A[i]
+            firstnonZero += 1
 
-    if firstZero == -1:
-        return A    
+    for j in range(firstnonZero,len(A)):
+        A[j] = 0        
+
     # we need to search for elements to swap after 0
-    currEle = firstZero + 1    
-    while currEle < len(A):
-        rouds += 1
-        if A[currEle] != 0:
-            A[currEle] , A[firstZero] = A[firstZero] , A[currEle]
-
-            
-            #finding next zero and setting it as firstZero
-            while firstZero < len(A):
-                rouds += 1
-                firstZero += 1
-                if A[firstZero] == 0:
-                    
-                    
-                    break
-
-        currEle += 1
-
-        
-
-
-
-
-        
-            
-
-    print(rouds)
+  
     return A
+            
+    
+
+        
+
+
+
+
+        
+            
+
+    
 
 
 A = [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0]
