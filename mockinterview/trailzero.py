@@ -1,5 +1,7 @@
 
 '''
+
+ COUNT SORT PROBLEM
 2) [0,1,0,0,1,0] description is same as 3
 
 if A = 
