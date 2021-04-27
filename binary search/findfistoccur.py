@@ -19,8 +19,8 @@ O(log N):
     in ordrt to find first coour in log N cost we need to continue the search even if we fidn element.
     lets say we found K at some index then we would reduce the search space to its left side untill base condition is hit
 
-    
 
+df
 
 
 
