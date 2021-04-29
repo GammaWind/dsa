@@ -78,14 +78,14 @@ def canFitAll(A,B,mid):
     point  = 0
     B -=1
     while i < len(A):
-        print(mid,A[i],A[point] + mid,B)
+        
         if A[i] >= A[point] + mid:
             point = i
             B -= 1
         i += 1
     if A[i-1] >= A[point] + mid:
         B -= 1  
-    print(B)      
+          
     if B <= 0:
         return True
     return False        
