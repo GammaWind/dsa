@@ -94,14 +94,13 @@ def sqrt( A):
     ans = sys.maxsize
     while start <= end:
         mid = (start + end)//2
-        if mid * mid == A:
-            return mid
+        
         if mid * mid > A:
             end  = mid -1
-        elif mid * mid < A:
+        elif mid * mid <= A:
             ans = mid
             start = mid + 1
     return ans        
 
 
-print(sqrt(11))
+print(sqrt(8))
