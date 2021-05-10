@@ -1,4 +1,6 @@
 '''
+CORNER CASE FOUND == "000000"
+ANS SHOULD BE 0 so if sum(A) == 0: return '0'
 
 1)Given a list of non negative integers, arrange them such that they form the largest number.
 For example:
