@@ -1,2 +1,2 @@
 language = "python3"
-run = ""
+run = "/RecurBacktrack/subsets2.py"

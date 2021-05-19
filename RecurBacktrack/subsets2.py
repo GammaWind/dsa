@@ -10,7 +10,15 @@ ans : [] , [1], [1,2],[2],[2,2],[1,2,2]
 
 approach :
 
-here we can use subsets.1 approach, i.e. at the base case before inserting a subset into the ans array we can check if the same subset exists in the answer array, but this apparch is costly so we need to rething the whole problem itself. how do we do that ?????
+here we can use subsets.1 ap
+
+
+
+
+
+
+
+proach, i.e. at the base case before inserting a subset into the ans array we can check if the same subset exists in the answer array, but this apparch is costly so we need to rething the whole problem itself. how do we do that ?????
 
 
 we can use backtracking here with topdown approach ,
