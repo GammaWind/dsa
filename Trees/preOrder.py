@@ -42,3 +42,28 @@ Tr = Solution()
 ans = Tr.preorderTraversal(root)
 print(ans)
  
+
+
+class SolutionIterative:
+    def __init__(self):
+        self.stack = []
+        self.answer = []
+        
+	# @param A : root node of tree
+	# @return a list of integers
+    def preorderTraversal(self, A):
+	    self.stack.append(A)
+	    
+	    while len(self.stack) > 0:
+	        popped = self.stack.pop()
+	        self.answer.append(popped.val)
+	        
+	        if popped.right:
+	            self.stack.append(popped.right)
+	        if popped.left:        
+	            self.stack.append(popped.left)
+	    
+	    return self.answer   
+
+iterTree = SolutionIterative()    
+print('iterative',iterTree.preorderTraversal(root) )  
