@@ -83,9 +83,9 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def findMiddle(self, head):
+    def findMiddle(self, starter):
 
-        slow = head
+        slow = starter
         fast = slow.next
         while fast and fast.next:
             slow = slow.next
@@ -96,12 +96,12 @@ class LinkedList:
 
         # breakig the link
         slow.next = None
-
+        
         return middleNode
 
-    def reverseList(self, head):
+    def reverseList(self, start):
         prev = None
-        curr = head
+        curr = start
 
         while curr:
             temp = curr.next
@@ -120,10 +120,10 @@ class LinkedList:
                 curr = curr.next
                 head1 = head1.next
 
-        if head2 is not None:
-            curr.next = head2
-            curr = curr.next
-            head2 = head2.next
+            if head2 is not None:
+                curr.next = head2
+                curr = curr.next
+                head2 = head2.next
 
         return dummy.next
 
@@ -132,8 +132,10 @@ class LinkedList:
         if not A or not A.next:
 	        return A
         middle = self.findMiddle(A)
-        print('middle', self.printListWith(middle))
+        
         revFrom_middle = self.reverseList(middle)
+        
+        
         final = self.mergeList(A,revFrom_middle)
         return final
 
@@ -170,11 +172,12 @@ print("Given Linked List")
 llist.printList()
 lst = llist.returnList()
 answer = llist.reorderList(lst)
-print('blahs')
-llist.printListWith(lst)
 
 
 
 
-print("\nReversed Linked List")
-llist.printList()
+
+
+print("\reordered Linked List")
+llist.printListWith(answer)
+
