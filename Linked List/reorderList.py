@@ -65,6 +65,8 @@ now we will reverse the middle list
 after that we need to mrege both the lists
 
 TC O(N)
+Time Complexity : O(n) 
+Auxiliary Space : O(1) 
 
  '''
 
