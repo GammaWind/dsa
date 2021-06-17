@@ -21,19 +21,20 @@ In the maze matrix, 0 means the block is a dead end and 1 means the block can be
 '''
 
 def check(maze,x,y):
+    N = len(maze)-1
+    M = len(maze[0])-1
     print(x,y)
-    print(maze)
-    if x == len(maze)-1 and y == len(maze[0]) -1:
+    if x == N and y == M:
         return True
-
-    if x < 0 or x >= len(maze)-1 or y < 0 or y >= len(maze[0])-1:
+    if x < 0 or x >= N or y < 0 or y >= M:
         return False
 
     if maze[x][y] > 0:
         return False
+
     maze[x][y] = 2
 
-    return check(maze,x+1,y) or check(maze,x-1,y) or check(maze,x,y+1) or check(maze,x,y-1)            
+    return check(maze, x + 1, y) or check(maze, x-1, y) or check(maze, x, y + 1) or check(maze, x, y -1 )                    
 
 
 
@@ -47,3 +48,10 @@ maze = [ [0, 1, 1, 1],
 
 print(check(maze,0,0)) 
            
+
+
+
+prod
+
+
+
