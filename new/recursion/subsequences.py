@@ -95,25 +95,27 @@ COUNTS ARE USEFUL IN DP
 eg. arr = [3,1,2] k = 3
 matching subsequences = [3] [1,2]
 ans = 2
+
+here to optimize we will calculate the sum while recursing
 """
 
-def count_subsequence_sum_k(i:int, inp: List, ans: List, k):
+def count_subsequence_sum_k(i:int, inp: List, k, su:int) -> int:
 
     if i >= len(inp):
-        if sum(ans) == k:
+        if su == k:
             return 1
         else:
             return 0
 
-    ans.append(inp[i])
-    first = count_subsequence_sum_k(i+1, inp, ans, k)
+    su += inp[i]
+    first = count_subsequence_sum_k(i+1, inp, k, su)
 
-    ans.pop()
-    second = count_subsequence_sum_k(i+1, inp, ans, k)  
+    su -= inp[i]
+    second = count_subsequence_sum_k(i+1, inp, k, su)  
 
     return first + second 
 
 
-ans = count_subsequence_sum_k(0,[3,1,2], [], 3)
+ans = count_subsequence_sum_k(0,[3,1,2], 3, 0)
 print(ans)
 
