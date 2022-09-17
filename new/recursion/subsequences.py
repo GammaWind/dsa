@@ -34,6 +34,86 @@ for every function call we are calling out 2 new recusions
 so for n functions it would be 2^n
 
 """
+print("======================================================")
+
+#all Subsequence with sum equals to k
+'''
+eg. arr = [3,1,2] k = 3
+ans = [3] [1,2]
+lists can be any order
+'''
+
+def get_subsequence_sum(i: int, inp: List, ans: List, k: int) -> None:
+
+    if i >= len(inp):
+        if sum(ans) == k:
+            print(ans)
+        return
+
+    ans.append(inp[i])
+    get_subsequence_sum(i+1, inp, ans, k)
+
+    ans.pop()
+    get_subsequence_sum(i+1, inp, ans, k)
+
+get_subsequence_sum(0,[3,1,2],[],3)
 
 
+#subsequence sum equals to k print/return only first matching subsequence
+"""
+eg. arr = [3,1,2] k = 3
+matching subsequences = [3] [1,2]
+ans = [3]
+"""
+
+def first_subsequnce_sum(i:int, inp: List, ans: List, k=int):
+    
+    if i >= len(inp):
+        if sum(ans) == k:
+            print(ans)
+            return True
+        else:
+            return False
+
+    ans.append(inp[i])
+    if first_subsequnce_sum(i+1, inp, ans, k):
+        return True
+    ans.pop()
+    if first_subsequnce_sum(i+1, inp, ans, k):
+        return True
+
+print("////////////////////////////////////////////////////////")
+
+print(first_subsequnce_sum(0,[3,1,2], [], 3))
+print("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\")
+
+
+#count of subsequence sum equals to k print/return only first matching subsequence
+
+"""
+COUNTS ARE USEFUL IN DP
+eg. arr = [3,1,2] k = 3
+matching subsequences = [3] [1,2]
+ans = 2
+"""
+
+def count_subsequence_sum_k(i:int, inp: List, ans: List, k):
+
+    if i >= len(inp):
+        if sum(ans) == k:
+            return 1
+        else:
+            return 0
+
+    ans.append(inp[i])
+    first = count_subsequence_sum_k(i+1, inp, ans, k)
+
+    ans.pop()
+    second = count_subsequence_sum_k(i+1, inp, ans, k)  
+
+    return first + second 
+
+
+ans = count_subsequence_sum_k(0,[3,1,2], [], 3)
+print(ans)
 
