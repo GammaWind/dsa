@@ -11,6 +11,9 @@ Approach 1 : recursively
 
 '''
 
+from typing import List
+
+
 class TreeNode:
 	def __init__(self, x):
 		self.val = x
@@ -67,3 +70,33 @@ class SolutionIterative:
 
 iterTree = SolutionIterative()    
 print('iterative',iterTree.preorderTraversal(root) )  
+
+#My approach
+
+
+def preorder_my(root: TreeNode) -> List[int]:
+	if not root:
+		return []
+	stack: List[TreeNode] = []
+	ans = []
+
+	stack.append(root)
+	
+
+	while stack:
+		root = stack.pop()
+		ans.append(root.val)
+
+		if root.right:
+			stack.append(root.right)
+		if root.left:
+			stack.append(root.left)		
+
+	return ans
+
+
+anss  =preorder_my(root)
+
+print(f'my approach ans is {anss}')
+	
+
