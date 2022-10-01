@@ -25,25 +25,21 @@ def bfs_traversal(adj_list: Dict[int, List[int]]):
 
         while que:
             node  = que.pop(0)
-
-            if node not in vistied_set:
-                ans.append(node)
-                vistied_set.add(node)
+            ans.append(node)
+              
 
             adj_nodes = adj_list.get(node)
             for n in adj_nodes:
-                que.append(n)
+                if n not in vistied_set:
+                    vistied_set.add(n)
+                    que.append(n)
       
         
-
-        
-        
-
 
     for key in adj_list:
         print(f'key {key}')
         if key not in vistied_set:
-            
+            vistied_set.add(key)
             bfs(key, adj_list, ans, vistied_set)
 
     return ans 
