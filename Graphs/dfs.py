@@ -7,7 +7,7 @@ dfs traversal of below given graph
 |              |
 4-----3        8
 Tc O(N + E (for edges))
-Aux Space : O(N)
+spc comp: O(N) for queue that we are using + O(N) for the set aswell
 
 '''
 
@@ -21,11 +21,12 @@ def dfs_traversal(adj_list: Dict[int, List[int]]):
     def dfs(node, adj_list: Dict[int, List[int]], ans: List[int], vistied_set: Set[int]):
         
         ans.append(node)
-        vistied_set.add(node)
+        
 
         adj_nodes = adj_list.get(node)
         for n in adj_nodes:
             if n not in vistied_set:
+                vistied_set.add(n)
                 dfs(n, adj_list, ans, vistied_set)
     for key in adj_list:
         print(f'key {key}')
